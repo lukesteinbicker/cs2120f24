@@ -136,8 +136,6 @@ def pfZeroEv : Ev 0 := pfZero
 def pfTwoEv : Ev 2 := pfEvPlus2 0 pfZeroEv
 def pfFourEv : Ev 4 := pfEvPlus2 2 pfTwoEv
 
-def pfSixEv : Ev 6 := pfEvPlus2 4 pfFourEv
-
 /-!
 Why can't we build a proof that 5 is even?
 Well, to do that, we'd need a proof that 3
