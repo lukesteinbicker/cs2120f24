@@ -17,7 +17,7 @@ window that truth tables on the intended meanings
 of the logical connectives.
 
 For exaple the first cluster of three rules fully
-defines the intended meaning of conjunction (and).
+defines the intended meaning of conjuncfftion (and).
 If two propositions, let's call them P and Q, are
 each true, the P ∧ Q is true; and if P ∧ Q is true,
 then so part P, and Q, individually. That's all we
