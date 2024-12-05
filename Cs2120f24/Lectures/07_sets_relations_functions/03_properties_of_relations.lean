@@ -15,7 +15,7 @@ The definitions/specifications speak for themselves.
 The property of not relating any pair of values
 -/
 def isEmpty {α β : Type} : Rel α β → Prop :=
-  fun r => ¬∃ x y, r x y
+  fun (r : Rel α β) => ¬∃ (x : α) (y : β), r x y
 
 /-
 The property of relating every every pair of values
@@ -23,10 +23,6 @@ The property of relating every every pair of values
 def isComplete {α β : Type} : Rel α β → Prop :=
   fun r => ∀ x y, r x y
 
-def natCompleteRel: Rel Nat Nat := fun a b => True
-
-example: isComplete natCompleteRel :=
-fun a b => True.intro
 /-
 The property of relating every input to some output
 -/
@@ -170,7 +166,9 @@ def predRel : Rel Nat Nat := fun a b => b = a.succ
 
 
 example : @isWellOrdering Nat Nat predRel :=
-  fun s nonempty => sorry
+  fun s nonempty =>
+  -- ∃ m ∈ s, ¬∃ n ∈ s, predRel n m
+  _
 
 /-
 ## Examples
@@ -302,4 +300,4 @@ example {α β : Type} :
         have rbc : r b c := rinvcb
         -- ∀ x y z, r x y → r x z → y = z
         have rfun : isFunctional r := hinjr.left
-        _ ---???
+        sorry ---???
